@@ -1,11 +1,14 @@
 from picamera import PiCamera
-from time import sleep
+import time
+import datetime
 
 camera = PiCamera()
 
-for i in range (5):
+for i in range (96):
+    start = time.time()                                                                                              #starpunkt Messung mit Uhrzeit
     camera.start_preview()
-    sleep(2)
-    camera.capture('Home/pi/Desktop/image%s.jpg' % i)
+    time.sleep(2)
+    camera.capture('/home/pi/Desktop/Testbilder/image%s.jpg' % str(datetime.datetime.now().isoformat()))
     camera.stop_preview()
-    sleep(10)
+    time_needed = time.time() - start                                                                                # wieviel Zeit wurde benötigt? - wird abgezogen
+    time.sleep(10 - time_needed)                                                                                     # benötigte Zeit von Loop abziehen
