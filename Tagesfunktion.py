@@ -12,7 +12,7 @@ def get_user_home():
 
 
 def get_picture_path():
-    return f"/home/{get_user_home()}/Desktop/Testbuilder"
+    return f"/home/{get_user_home()}/Desktop/Testbilder"
 
 
 def create_testbilder_path():
