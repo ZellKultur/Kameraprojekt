@@ -1,7 +1,7 @@
 from picamera import PiCamera
 import time
 import datetime
-
+#Kamera importieren
 camera = PiCamera()
 
 for i in range (96):
